@@ -56,6 +56,7 @@ yearSelect.addEventListener('change', () => {
         // console.log(yearSelect.value);
         makeSelect.disabled = false;
         makeSelect.innerHTML = '<option>Vehicle Make</option>';//I was having an issue where when I switched years after already selecting a year and a make where it would stack the previous make within the make dropdown instead of getting rid of it. So, I had to learn that makeSelect.innerHTML takes what was in the dropdown and dumps it out after choosing another year in the year dropdown. It then puts the "Vehicle Make" placeholder BACK after dumping everything out. This was a wild ride lesson.
+        //setting modelSelect.disabled = true locks 'Model' (the opposite of the Make listener below, which unlocks it). I needed this because when I switched years, Model stayed unlocked with the old models still in it. 
         modelSelect.disabled = true;
         modelSelect.innerHTML = '<option>Vehicle Model</option>';
         const yearCarsAfterFilter = carDataset.filter((car) => car.year == yearSelect.value);
@@ -109,6 +110,7 @@ modelList.forEach((model) => {
 
 });
 
+//This was a huge realization. So, filter goes through goes through the whole array and find goes through the cars and stops at the first match. This gives back just one car not the entire list. This is just all of the things needed to narrow it down and down to what you are actually looking for.
 modelSelect.addEventListener('change', () => {
     const selectedCar = carDataset.find((car) => car.year == yearSelect.value && car.Manufacturer == makeSelect.value && car.model == modelSelect.value);
     console.log(selectedCar);
