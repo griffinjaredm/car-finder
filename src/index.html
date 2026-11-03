@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Finder</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap">
+</head>
+<body>
+  <main class="finder">
+    <h1>Find Your Dream Vehicle</h1>
+    <p>Have you been dreaming about getting a new vehicle? Well, you're in luck.</p>
+
+    <div class="panel">
+      <div class="column">
+        <h2>Year</h2>
+        <select id="year">
+          <option>Vehicle Year</option>
+        </select>
+      </div>
+
+      <div class="column">
+        <h2>Make</h2>
+        <select id="make" disabled>
+          <option>Vehicle Make</option>
+        </select>
+      </div>
+
+      <div class="column">
+        <h2>Model</h2>
+        <select id="model" disabled>
+          <option>Vehicle Model</option>
+        </select>
+      </div>
+    </div>
+  </main>
+</body>
+
+<!-- I had to remove the script that was in here from the imported file from the class because webpack already adds bundle.js automatically. Having both made the code run twice and I had to debug for a long time. But, it was a good exercise :) -->
+
+</html>
